@@ -1,0 +1,25 @@
+?SECTION D--PAC,TANDEM
+* Record D--PAC version 2 updated on 04/11/05 at 11:07
+  01 D--PAC.
+    02 D--PAC-KEY.
+      03 D--PAC-ACCOUNT-ID           PIC X(18).
+    02 D--PAC-AVAIL-STATE            PIC X.
+    02 D--PAC-AVAIL-AMT              PIC S9(12)     SIGN LEADING SEPARATE.
+    02 D--PAC-TOT-AUTH-PEND          PIC S9(12)     SIGN LEADING SEPARATE.
+    02 D--PAC-TOT-DC-ALEU            PIC S9(12)     SIGN LEADING SEPARATE.
+    02 D--PAC-TOT-DC-STEU            PIC S9(12)     SIGN LEADING SEPARATE.
+    02 D--PAC-AVAIL-DATE-R           PIC 9(6).
+    02 D--PAC-AVAIL-DATE REDEFINES D--PAC-AVAIL-DATE-R.
+      03 YEAR                        PIC 9(2).
+      03 MONTH                       PIC 9(2).
+      03 DAYM                        PIC 9(2).
+    02 D--PAC-CASH-LIMIT-IND         PIC X.
+    02 D--PAC-CASH-LIMIT             PIC 9(12).
+    02 D--PAC-CASH-LIMIT-BANK        PIC 9(12).
+    02 D--PAC-CASH-LIMIT-DATE-R      PIC 9(6).
+    02 D--PAC-CASH-LIMIT-DATE REDEFINES D--PAC-CASH-LIMIT-DATE-R.
+      03 YEAR                        PIC 9(2).
+      03 MONTH                       PIC 9(2).
+      03 DAYM                        PIC 9(2).
+    02 D--PAC-CURCY-CODE             PIC 9(3).
+    02 D--PAC-FILLER                 PIC X(39).

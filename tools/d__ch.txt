@@ -1,0 +1,310 @@
+?SECTION D--CH,TANDEM
+  01 D--CH.
+    03 DEF-CH.
+      05 D--CH-KEY.
+        07 D--CH-CARD-PAN-R          PIC X(19).
+        07 D--CH-CARD-PAN REDEFINES D--CH-CARD-PAN-R.
+          09 PAN-1                   PIC X(4).
+          09 PAN-2                   PIC X(4).
+          09 PAN-3                   PIC X(4).
+          09 PAN-4                   PIC X(4).
+          09 PAN-5                   PIC X(3).
+      05 FILLER                      PIC X.
+      05 FILLER                      PIC X(3).
+      05 D--CH-NAME                  PIC X(26).
+      05 D--CH-CURCY-CODE            PIC 9(03).
+      05 D--CH-EXCEPT-IND-INT        PIC 9(2)       COMP.
+      05 D--CH-EXCEPT-IND-DOM        PIC 9(2)       COMP.
+      05 D--CH-PURGE-DATE.
+        07 YEAR                      PIC 9(2).
+        07 MONTH                     PIC 9(2).
+      05 D--CH-REGION-CODE           PIC X(9).
+      05 D--CH-EXP-DATE.
+        07 YEAR                      PIC 9(2).
+        07 MONTH                     PIC 9(2).
+      05 D--CH-SALDO-ON-HOST         PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-CRAC-LIMIT            PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-TEMP-DISP-INCREM      PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-MAX-DATE-INCREM-R     PIC 9(6).
+      05 D--CH-MAX-DATE-INCREM REDEFINES D--CH-MAX-DATE-INCREM-R.
+        07 YEAR                      PIC 9(2).
+        07 MONTH                     PIC 9(2).
+        07 DAYM                      PIC 9(2).
+      05 FILLER                      PIC X(5).
+      05 D--CH-TOT-AUTH-PEND         PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-TOT-DC-ALEU           PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-TOT-DC-STEU           PIC S9(12)     SIGN LEADING SEPARATE.
+      05 D--CH-TX-TIME-R             PIC 9(14).
+      05 D--CH-TX-TIME REDEFINES D--CH-TX-TIME-R.
+        07 DATIM.
+          09 YEAR                    PIC 9(2).
+          09 MONTH                   PIC 9(2).
+          09 DAYM                    PIC 9(2).
+        07 TIM.
+          09 HOUR                    PIC 9(2).
+          09 MIT                     PIC 9(2).
+          09 SEC                     PIC 9(2).
+          09 CC                      PIC 9(2).
+      05 FILLER                      PIC X(43).
+      05 D--CH--MAX.
+        07 D--CH-MAX-TX.
+          09 D--CH-DOM-SALE-MAX-TX   PIC 9(12).
+          09 D--CH-DOM-CASH-MAX-TX   PIC 9(12).
+          09 D--CH-INT-SALE-MAX-TX   PIC 9(12).
+          09 D--CH-INT-CASH-MAX-TX   PIC 9(12).
+        07 D--CH-MAX-24H.
+          09 D--CH-DOM-SALE-MAX-24H  PIC 9(12).
+          09 D--CH-DOM-CASH-MAX-24H  PIC 9(12).
+          09 D--CH-DOM-TOT-MAX-24H   PIC 9(12).
+          09 D--CH-INT-SALE-MAX-24H  PIC 9(12).
+          09 D--CH-INT-CASH-MAX-24H  PIC 9(12).
+          09 D--CH-INT-TOT-MAX-24H   PIC 9(12).
+          09 D--CH-SALE-MAX-24H      PIC 9(12).
+          09 D--CH-CASH-MAX-24H      PIC 9(12).
+          09 D--CH-TOT-MAX-24H       PIC 9(12).
+          09 D--CH-CARD-USE-MAX-24H  PIC 9(4).
+        07 D--CH-MAX-7D.
+          09 D--CH-DOM-SALE-MAX-7D   PIC 9(12).
+          09 D--CH-DOM-CASH-MAX-7D   PIC 9(12).
+          09 D--CH-DOM-TOT-MAX-7D    PIC 9(12).
+          09 D--CH-INT-SALE-MAX-7D   PIC 9(12).
+          09 D--CH-INT-CASH-MAX-7D   PIC 9(12).
+          09 D--CH-INT-TOT-MAX-7D    PIC 9(12).
+          09 D--CH-SALE-MAX-7D       PIC 9(12).
+          09 D--CH-CASH-MAX-7D       PIC 9(12).
+          09 D--CH-TOT-MAX-7D        PIC 9(12).
+          09 D--CH-CARD-USE-MAX-7D   PIC 9(4).
+      05 D--CH-CUR.
+        07 D--CH-CUR-24H.
+          09 D--CH-DOM-SALE-CUR-24H  PIC 9(12).
+          09 D--CH-DOM-CASH-CUR-24H  PIC 9(12).
+          09 D--CH-INT-SALE-CUR-24H  PIC 9(12).
+          09 D--CH-INT-CASH-CUR-24H  PIC 9(12).
+          09 D--CH-CARD-USE-CUR-24H  PIC 9(4).
+          09 D--CH-POINTER-24H       PIC 9(2).
+          09 D--CH-CUR-24H-DET.
+            11 D--CH--CUR-4H         OCCURS 6 TIMES.
+              13 DOM-SALE            PIC 9(12).
+              13 DOM-CASH            PIC 9(12).
+              13 INT-SALE            PIC 9(12).
+              13 INT-CASH            PIC 9(12).
+              13 CARD-USE            PIC 9(4).
+        07 D--CH-CUR-7D.
+          09 D--CH-DOM-SALE-CUR-7D   PIC 9(12).
+          09 D--CH-DOM-CASH-CUR-7D   PIC 9(12).
+          09 D--CH-INT-SALE-CUR-7D   PIC 9(12).
+          09 D--CH-INT-CASH-CUR-7D   PIC 9(12).
+          09 D--CH-CARD-USE-CUR-7D   PIC 9(4).
+          09 D--CH-POINTER-7D        PIC 9(2).
+          09 D--CH-CUR-7D-DET.
+            11 D--CH--CUR-DAY        OCCURS 7 TIMES.
+              13 DOM-SALE            PIC 9(12).
+              13 DOM-CASH            PIC 9(12).
+              13 INT-SALE            PIC 9(12).
+              13 INT-CASH            PIC 9(12).
+              13 CARD-USE            PIC 9(4).
+      05 D--CH-LAST-OPERATION.
+        07 OPER-ID.
+          09 USER-CLASS              PIC X(3).
+          09 USER-ID                 PIC X(8).
+        07 STATE                     PIC 9.
+        07 DISABLE-REASON            PIC 9.
+        07 CREATION-TIME-R           PIC 9(10).
+        07 CREATION-TIME REDEFINES CREATION-TIME-R.
+          09 DAT.
+            11 YEAR                  PIC 9(2).
+            11 MONTH                 PIC 9(2).
+            11 DAYM                  PIC 9(2).
+          09 TIM.
+            11 HOUR                  PIC 9(2).
+            11 MIT                   PIC 9(2).
+        07 DISABLE-TIME-R            PIC 9(10).
+        07 DISABLE-TIME REDEFINES DISABLE-TIME-R.
+          09 DAT.
+            11 YEAR                  PIC 9(2).
+            11 MONTH                 PIC 9(2).
+            11 DAYM                  PIC 9(2).
+          09 TIM.
+            11 HOUR                  PIC 9(2).
+            11 MIT                   PIC 9(2).
+        07 MODIF-TIME-R              PIC 9(10).
+        07 MODIF-TIME REDEFINES MODIF-TIME-R.
+          09 DAT.
+            11 YEAR                  PIC 9(2).
+            11 MONTH                 PIC 9(2).
+            11 DAYM                  PIC 9(2).
+          09 TIM.
+            11 HOUR                  PIC 9(2).
+            11 MIT                   PIC 9(2).
+      05 D--CH-CURR-PVV              PIC 9(4)       COMP.
+      05 D--CH-TEMP-PVV              PIC 9(4)       COMP.
+      05 D--CH-PIN-ERR-CNT           PIC 9.
+      05 D--CH-PIN-DISABLE           PIC 9.
+      05 D--CH-UPDT-NR               PIC 9(4).
+      05 D--CH-LAST-TX.
+        07 TRACE-NR                  PIC X(6).
+        07 COMPL-CODE                PIC X(32).
+        07 REPLY-CODE                PIC 9(4)       COMP.
+        07 AMT                       PIC S9(12)     SIGN LEADING SEPARATE.
+        07 CODFIN                    PIC 9(2).
+        07 TX-TYPE                   PIC 9(2).
+        07 DATIM-R                   PIC 9(10).
+        07 DATIM REDEFINES DATIM-R.
+          09 DAT.
+            11 YEAR                  PIC 9(2).
+            11 MONTH                 PIC 9(2).
+            11 DAYM                  PIC 9(2).
+          09 TIM.
+            11 HOUR                  PIC 9(2).
+            11 MIT                   PIC 9(2).
+        07 ISO2-IND                  PIC 9.
+        07 ME-KEY.
+          09 MID                     PIC X(10).
+          09 ME-BRAND                PIC X(3).
+        07 CARD-EXP-DATE.
+          09 YEAR                    PIC 9(2).
+          09 MONTH                   PIC 9(2).
+        07 TE-KEY.
+          09 UID                     PIC X(10).
+          09 TE-BRAND                PIC X(3).
+        07 FILLER                    PIC X(3).
+        07 RESPONSE-TABLE            PIC 9(2).
+        07 DECISION-TABLE            PIC 9(2).
+      05 D--CH-ATM-LAST-DATE-R       PIC 9(6).
+      05 D--CH-ATM-LAST-DATE REDEFINES D--CH-ATM-LAST-DATE-R.
+        07 YEAR                      PIC 9(2).
+        07 MONTH                     PIC 9(2).
+        07 DAYM                      PIC 9(2).
+      05 D--CH-ATM-TOT-CURR-TX       OCCURS 4 TIMES.
+        07 D--CH-TOT-TX-AMOUNT       PIC 9(12).
+        07 D--CH-TOT-NB-TX           PIC 9(2).
+      05 D--CH-PIN-CH-ALLOWED-IND    PIC 9.
+      05 D--CH-PIN-CHANGE-BUSY-IND   PIC X.
+      05 D--CH-EXP-YY-LAST-APPR-TX   PIC 99.
+      05 D--CH-CURR-PVV-DATE-TIME-R  PIC 9(12).
+      05 D--CH-CURR-PVV-DATE-TIME REDEFINES D--CH-CURR-PVV-DATE-TIME-R.
+        07 DAT.
+          09 YEAR                    PIC 9(2).
+          09 MONTH                   PIC 9(2).
+          09 DAYM                    PIC 9(2).
+        07 TIM.
+          09 HOUR                    PIC 9(2).
+          09 MIT                     PIC 9(2).
+          09 SEC                     PIC 9(2).
+      05 D--CH-CURR-PVKI             PIC X.
+      05 D--CH-TEMP-PVV-DATE-TIME-R  PIC 9(12).
+      05 D--CH-TEMP-PVV-DATE-TIME REDEFINES D--CH-TEMP-PVV-DATE-TIME-R.
+        07 DAT.
+          09 YEAR                    PIC 9(2).
+          09 MONTH                   PIC 9(2).
+          09 DAYM                    PIC 9(2).
+        07 TIM.
+          09 HOUR                    PIC 9(2).
+          09 MIT                     PIC 9(2).
+          09 SEC                     PIC 9(2).
+      05 D--CH-TEMP-PVKI             PIC X.
+      05 D--CH-TRY-PIN-CHANGE        PIC 99.
+      05 D--CH-ISS-ID                PIC 9(6).
+* ++ BORICA (VISA MULTIKEY SOLUTION)
+      05 D--CH-VISA-KEY-SET          PIC X(2).
+* ++ BORICA (Credit card account)
+      05 D--CH-CASH-LIMIT-IND        PIC X(1).
+      05 D--CH-CASH-LIMIT            PIC 9(12).
+      05 D--CH-ACCOUNT-IND           PIC X(1).
+      05 D--CH-ACCOUNT               PIC X(18).
+      05 D--CH-CASH-LIMIT-BANK       PIC 9(12).
+      05 D--CH-CASH-LIMIT-DATE-R     PIC 9(6).
+      05 D--CH-CASH-LIMIT-DATE REDEFINES D--CH-CASH-LIMIT-DATE-R.
+        07 YEAR                      PIC 9(2).
+        07 MONTH                     PIC 9(2).
+        07 DAYM                      PIC 9(2).
+* ++ BORICA (EMV Issuing)
+      05 D--CH-EMV-SD-ID             PIC X(2).
+      05 D--CH-EMV-APP-INST          PIC X(2).
+      05 D--CH-EMV-MK-VER            PIC X(2).
+      05 D--CH-EMV-ATC               PIC X(4).
+      05 D--CH-EMV-POST-ISS.
+        07 D--CH-PIN-SYNCHRO         PIC X(1).
+        07 D--CH-CRIT-SCRIPT.
+          09 SCRIPT-NUMBER           PIC X(8).
+          09 FLAG-SCRIPT-READY       PIC X(1).
+          09 FLAG-SCRIPT-SENT        PIC X(1).
+        07 D--CH-SCRIPT-PRI-1.
+          09 SCRIPT-NUMBER           PIC X(8).
+          09 COUNTERS-RESET REDEFINES SCRIPT-NUMBER.
+             11 COUNTERS-RESET-DAT   PIC X(6).
+             11 COUNTERS-RESET-NUM   PIC X(2).
+          09 FLAG-SCRIPT-READY       PIC X(1).
+          09 FLAG-SCRIPT-SENT        PIC X(1).
+        07 D--CH-SCRIPT-PRI-2.
+          09 SCRIPT-NUMBER           PIC X(8).
+          09 FLAG-SCRIPT-READY       PIC X(1).
+          09 FLAG-SCRIPT-SENT        PIC X(1).
+      05 D--CH-EMV-CARD-NR           PIC X(12).
+      05 D--CH-CALC-COUNTER          PIC X(4).
+      05 D--CH-OLTB-IND              PIC X(1).
+      05 D--CH-SECOND-CARD-IND       PIC X(1).
+      05 D--CH-OLD-ICVV-IND          PIC X(1).
+      05 D--CH-NEW-ICVV-IND          PIC X(1).
+      05 D--CH-WNG-ICVV-IND          PIC X(1).
+      05 D--CH-EMV-CARD-TYPE         PIC X(1).
+      05 D--CH-CUST-NR               PIC 9(6).
+      05 D--CH-BOR-SEC-CODE-TRY      PIC 9(1).
+      05 D--CH-EMV-LOAD-SUM          PIC 9(12).
+      05 D--CH-EMV-SPENT-SUM         PIC 9(12).
+      05 D--CH-EMV-OFFLINE-TX        PIC 9(4).
+      05 D--CH-EMV-CNTLESS-IND       PIC 9.
+      05 D--CH-NEW-EMUE              PIC X(16).
+      05 D--CH-DKVK.
+        07 D--CH-DKVK-IND            PIC X.
+        07 D--CH-DKVK-TIME-R         PIC 9(14).
+        07 D--CH-DKVK-TIME REDEFINES D--CH-DKVK-TIME-R.
+          09 DATIM.
+            11 YEAR                  PIC 9(2).
+            11 MONTH                 PIC 9(2).
+            11 DAYM                  PIC 9(2).
+          09 TIM.
+            11 HOUR                  PIC 9(2).
+            11 MIT                   PIC 9(2).
+            11 SEC                   PIC 9(2).
+            11 CC                    PIC 9(2).
+        07 D--CH-DKVK-YM             PIC X(4).
+        07 D--CH-DKVK-SC             PIC X(3).
+        07 D--CH-DKVK-MIN            PIC 9(3).
+        07 D--CH-DKVK-STATIC-IND     PIC X.
+      05 D--CH-ACT-FLAG1-OLD         PIC X.
+      05 D--CH-ACT-FLAG2-OLD         PIC X.
+      05 D--CH-ACT-FLAG1-NEW         PIC X.
+      05 D--CH-ACT-FLAG2-NEW         PIC X.
+* INDICATOR SHOWING PVV/CVV SCHEME 0 = MC SCHEME, 1 = VISA SCHEME FOR OLD AND NEW CARD
+      05 D--CH-PVV-CVV-IND-OLD       PIC X.
+      05 D--CH-PVV-CVV-IND-NEW       PIC X.
+      05 D--CH-INTERNET-IND-OLD      PIC X.
+      05 D--CH-INTERNET-IND-NEW      PIC X.
+      05 D--CH-ACT-FLAG3             PIC X.
+      05 D--CH-SCA-COUNT             PIC 9(2).
+      05 D--CH-SCA-COUNT-3D          PIC 9(2).
+      05 D--CH-SCA-AMT               PIC 9(12).
+      05 FILLER                      PIC X(279).
+*     05 FILLER                      PIC X(291).
+*     05 FILLER                      PIC X(282).
+*     05 FILLER                      PIC X(295).
+*     05 FILLER                      PIC X(297).
+*     05 FILLER                      PIC X(299).
+*     05 FILLER                      PIC X(303).
+*     05 FILLER                      PIC X(304).
+*     05 FILLER                      PIC X(329).
+*     05 FILLER                      PIC X(345).
+*     05 FILLER                      PIC X(374).
+*     05 FILLER                      PIC X(381).
+*     05 FILLER                      PIC X(382).
+*     05 FILLER                      PIC X(383).
+*     05 FILLER                      PIC X(385).
+*     05 FILLER                      PIC X(386).
+*     05 FILLER                      PIC X(387).
+*     05 FILLER                      PIC X(391).
+*     05 FILLER                      PIC X(403).
+*     05 FILLER                      PIC X(444).
+*     05 FILLER                      PIC X(494).
+*     05 FILLER                      PIC X(496).
+* -- BORICA

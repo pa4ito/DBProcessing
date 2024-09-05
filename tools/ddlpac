@@ -1,0 +1,25 @@
+?dict $applc.jddldict
+?Section PAC
+* Record PAC created on 27/08/2024 at 22:01 by me...
+? C00CAlign
+Record PAC.
+  File is "$APPLE.DOVIEMDI.MDIPAC"    Key-sequenced.  
+?Talbound 1
+02 D--PAC.
+    03 D--PAC-KEY.
+      05 D--PAC-ACCOUNT-ID           PIC X(18).
+    03 D--PAC-AVAIL-STATE            PIC X.
+    03 D--PAC-AVAIL-AMT              PIC S9(12).
+    03 D--PAC-TOT-AUTH-PEND          PIC S9(12).
+    03 D--PAC-TOT-DC-ALEU            PIC S9(12).
+    03 D--PAC-TOT-DC-STEU            PIC S9(12).
+    03 D--PAC-AVAIL-DATE-R           PIC 9(6).
+    03 D--PAC-CASH-LIMIT-IND         PIC X.
+    03 D--PAC-CASH-LIMIT             PIC 9(12).
+    03 D--PAC-CASH-LIMIT-BANK        PIC 9(12).
+    03 D--PAC-CASH-LIMIT-DATE-R      PIC 9(6).
+    03 D--PAC-CURCY-CODE             PIC 9(3).
+    03 D--PAC-FILLER                 PIC X(39).
+
+Key is D--PAC-KEY Duplicates not allowed.
+End

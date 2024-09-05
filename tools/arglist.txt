@@ -1,0 +1,8 @@
+bp=$applc.doviemdi.mdibp
+bt=$applc.doviemdi.mdibt
+threads=4
+foreignBinPathmon=$osys
+foreignBinServer=ebin
+et=$APPL.DDBORMDI.MDIET
+vt=$APPL.DDBORMDI.MDIVT
+bint=$APPL.DDBORMDI.MDIBIN

@@ -1,0 +1,11 @@
+purge $users.plamen.ibtc !
+RESET
+   SET TYPE K
+   SET KEYLEN 85
+   SET REC 85
+   SET BLOCK 4096
+   SET IBLOCK 4096
+   SET EXT( 4, 32 )
+   SET MAXEXTENTS 100
+CREATE $users.plamen.ibtc
+ 
